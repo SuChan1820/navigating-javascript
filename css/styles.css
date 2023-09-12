@@ -1,6 +1,7 @@
 h1 {
-    color: pink;
+    color: lightsalmon;
     text-align: center;
+    background-color: lightgreen;
 }
 
 .my-face {
@@ -12,4 +13,20 @@ h1 {
 img {
     max-width: 100%;
     max-height: 100%;
+}
+
+.paragraph {
+    font-size: 16px;
+    line-height: 10px;
+    font-family: arial, sans-serif;
+    font-style: italic;
+    color: green;
+}
+
+footer {
+    font-size: 10px;
+    line-height: 20px;
+    font-family:'arial';
+    background-color: pink;
+    color: white;
 }
