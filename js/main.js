@@ -1,53 +1,181 @@
-//Lessons 2 & 3: Assignment
+//Lessons 4: Answer to exercises sent through in Slack
 
-const myName = "Su";
-const myLocation = "Melbourne";
-let weather = "raining";
-let myFakeAge = 99;
+// The Calculator - Part 1
 
-console.log(myName, myLocation, weather);
+// 1
 
-console.log("My name is " + myName, ". I live in " + myLocation, "and I am " + myFakeAge, "years old.");
+function squareNumber(number) {
+    let resultSquareNum = number * number;
+    console.log(resultSquareNum);
+    console.log(`The result of squaring ${number} is ${resultSquareNum}.`);
+    return resultSquareNum;
+}
 
-console.log(`My name is ${myName}, I live in ${myLocation} and I am ${myFakeAge} years old.`)
+squareNumber(3);
 
-const myRealAge = (myFakeAge < 100) ? "A lady never reveals her age.": "You look amazing for your age!";
+// 2
 
-console.log(myRealAge);
-console.log(myFakeAge++);
-console.log(myFakeAge++);
-console.log(myFakeAge++);
+function halfNumber(number) {
+    let resultHalfNum = number / 2;
+    console.log(resultHalfNum);
+    console.log(`Half of ${number} is ${resultHalfNum}.`);
+    return resultHalfNum;
+}
 
-function examResult(A) {
-    let score;
-    if (A >= 50) {
-        score = 'Woohoo! You Passed!';        
-    } else {
-        score = "Bah Bow.";
+halfNumber(5);
+
+// 3
+
+function percentOf(number1, number2) {
+    let resultPercentage = (number1 / number2) * 100;
+    console.log(resultPercentage);
+    console.log(`${number1} is ${resultPercentage}% of ${number2}.`);
+    return resultPercentage;
+}
+
+percentOf(1, 4);
+
+// 4
+
+function areaOfCircle(number) {
+    let resultCircleArea = 3.141592653589793 * (number * number);
+    console.log(resultCircleArea);
+    console.log(`The area of a circle with radius ${number} is ${resultCircleArea}.`);
+    let resultCircleAreaTwoDec = resultCircleArea .toFixed(2);
+    console.log(`Or for short ${resultCircleAreaTwoDec}.`);
+    return resultCircleAreaTwoDec;
+}
+
+areaOfCircle(2);
+
+// The Calculator - Part 2
+
+function combineFunctions(number) {
+    let result1 = halfNumber(number);
+    let circleRadius = squareNumber(result1);
+    let circleArea = areaOfCircle(circleRadius);
+    let result4 = percentOf(circleArea, squareNumber(circleRadius * 2));
+}
+
+combineFunctions(10);
+
+// If/Else Statements
+
+// 1 What number's bigger?
+
+function greaterNum(a, b) {
+    if (a > b) {
+        console.log(`${a} is bigger than ${b}.`);
     }
-    return score;
-}
-
-console.log(examResult(49));
-console.log(examResult(50));
-console.log(examResult(85));
-
-console.warn("Pause. Drink some water");
-
-function amountOfLemons(L) {
-    let plural;
-    if (L <= 1) {
-        plural = 'lemon';
-    } else {
-        plural = 'lemons';
+    else {
+        console.log(`${b} is bigger than ${a}.`)
     }
-    console.log(plural);
 }
 
-console.log(amountOfLemons(0));
-console.log(amountOfLemons(1));
-console.log(amountOfLemons(2));
+greaterNum(1, 3);
+greaterNum(10, 5);
 
-for (let number = 1; number < 5; number++) {
-    console.log(`I have ${number} lemons.`);
+// 2 The World Translator
+
+function helloWorld(chooseLanguage) {
+    if (chooseLanguage === 'eng') {
+        console.log(`Hello World!`);
+    }
+    else if (chooseLanguage === 'jap') {
+        console.log(`Kon'nichiwa!`);
+    }
+    else if (chooseLanguage === 'fr') {
+        console.log(`Bonjour!`);
+    }
+    else if (chooseLanguage === 'ger') {
+        console.log(`Hallo!`)
+    }
+    else {
+        console.log(`Hello World!`);
+    }
 }
+
+helloWorld('jap');
+helloWorld('fr');
+helloWorld();
+
+// 3 The Grade Assigner
+
+function assignGrade(score) {
+    if (score < 50) {
+        console.log("Fail.");
+    }
+    else if (score >= 50 && score < 70) {
+        console.log("Pass.");
+    }
+    else if (score >= 70 && score < 80) {
+        console.log("Distinction.")
+    }
+    else if (score >= 80 && score <= 100) {
+        console.log("High Disctinction.")
+    }
+    else {
+        console.log("You're a genius!")
+    }
+}
+
+assignGrade(76);
+assignGrade(105);
+
+// 4 The Pluraliser - Su's attempt
+
+function pluraliseSuAttempt(noun, number) {
+    let collectiveNoun = 'sheep' || 'goose';
+    if (number <= 1) {
+        console.log(`${number} ${noun}.`);
+    }
+    else if (number >= 2 && noun != collectiveNoun) {
+        console.log(`${number} ${noun}s.`);
+    }
+    else if (number >= 2 && noun === 'sheep') {
+        console.log(`${number} ${noun}.`);
+    }
+    else if (number >= 2 && noun === 'goose') {
+        console.log(`${number} geese.`);
+    }
+    else {
+        console.log(`All the animals have escaped from the zoo!`);
+    }   
+}
+
+pluraliseSuAttempt('cat', 2);
+pluraliseSuAttempt('eagle', 1);
+pluraliseSuAttempt('sheep', 1);
+pluraliseSuAttempt('sheep', 25);
+pluraliseSuAttempt('goose', 1);
+pluraliseSuAttempt('goose', 103);
+pluraliseSuAttempt();
+
+// 4 The Pluraliser - When I couldn't get "goose" to log as "geese", I asked our friend ChatGPT and it gave me this code:
+
+function pluraliseChatGPT(noun, number) {
+    let collectiveNoun = 'sheep';
+    if (noun === 'goose') {
+        if (number === 1) {
+            console.log(`${number} goose.`);
+        } else {
+            console.log(`${number} geese.`);
+        }
+    } else if (number <= 1) {
+        console.log(`${number} ${noun}.`);
+    } else if (number >= 2 && noun !== collectiveNoun) {
+        console.log(`${number} ${noun}s.`);
+    } else if (number >= 2 && noun === collectiveNoun) {
+        console.log(`${number} ${noun}.`);
+    } else {
+        console.log(`All the animals have escaped from the zoo!`);
+    }
+}
+
+pluraliseChatGPT('cat', 6);
+pluraliseChatGPT('eagle', 1);
+pluraliseChatGPT('sheep', 1);
+pluraliseChatGPT('sheep', 72);
+pluraliseChatGPT('goose', 1);
+pluraliseChatGPT('goose', 56);
+pluraliseChatGPT();
