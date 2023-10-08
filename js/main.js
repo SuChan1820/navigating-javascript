@@ -1,4 +1,4 @@
-//Lessons 4: Answer to exercises sent through in Slack
+// Lessons 4: Answer to exercises sent through in Slack
 
 // The Calculator - Part 1
 
@@ -179,3 +179,63 @@ pluraliseChatGPT('sheep', 72);
 pluraliseChatGPT('goose', 1);
 pluraliseChatGPT('goose', 56);
 pluraliseChatGPT();
+
+// CLG - Week 5 - Experimenting with APIs
+
+// 1
+
+function messageKnock() {
+    console.log(`Knock Knock`);
+}
+
+function messageWhosThere() {
+    console.log(`Who's there?`);
+}
+
+function messageFirstAnswer() {
+    console.log(`Lettuce.`);
+}
+
+function messageQueryAnswer() {
+    console.log(`Lettuce who?`);
+}
+
+function messagePunchLine() {
+    console.log(`Lettuce in, it's too cold out here!`);
+}
+
+// console.log(`Wanna hear a joke?`);
+
+// setTimeout(messageKnock, 1000);
+// setTimeout(messageWhosThere, 2000);
+// setTimeout(messageFirstAnswer, 3000);
+// setTimeout(messageQueryAnswer, 4000);
+// setTimeout(messagePunchLine, 5000);
+
+// 2
+
+// Setting up the function to be called for the repeating message
+function repeatingMessage() {
+    let num = 1;
+    console.log(`This message is on repeat.` + num++);
+}
+
+// Setting up the new interval to repeat every 2 seconds
+const settingUpNewInterval = setInterval(repeatingMessage, 2000);
+
+// setInterval(repeatingMessage, 2000);
+
+// Stopping the repeating message
+clearInterval(settingUpNewInterval);
+
+// CLG - Week 6 - Traversing the DOM
+
+let button = document.querySelector(".btn");
+
+function poppyBtn() {
+    button.classList.toggle("btn-pop");
+}
+
+button.addEventListener('mouseover', poppyBtn);
+
+document.getElementById('title').style.textDecoration = "underline";
