@@ -228,6 +228,7 @@ const settingUpNewInterval = setInterval(repeatingMessage, 2000);
 // Stopping the repeating message
 clearInterval(settingUpNewInterval);
 
+
 // CLG - Week 6 - Traversing the DOM
 
 let button = document.querySelector(".btn");
@@ -238,4 +239,76 @@ function poppyBtn() {
 
 button.addEventListener('mouseover', poppyBtn);
 
-document.getElementById('title').style.textDecoration = "underline";
+// document.getElementById('title').style.textDecoration = "underline";
+
+// let titles = document.querySelector(".title");
+
+// titles.style.backgroundColor = "#F7BFB4";
+
+
+// CLG - Week 7 - Javascript Objects
+
+const plantProfile = {
+    type: "rose",
+    color: "red",
+    height: 100 + "cm",
+    whatPlantAmI: function() {
+        console.log(`I'm a beautiful ${this.color} ${this.type} and I'm ${this.height} tall.`);
+    }
+};
+
+plantProfile.whatPlantAmI();
+
+// let colorCombo = {
+//     firstColor: "pink",
+//     secondColor: "green",
+// }
+
+// console.log(colorCombo.secondColor);
+
+// let colorCombo = {
+//     firstColor: "red",
+//     secondColor: "",
+// }
+
+// console.log(colorCombo.secondColor);
+
+let colorCombo = {
+    firstColor: "blue",
+}
+
+console.log(colorCombo.secondColor);
+
+// Parsing JSON and JavaScript
+
+// let family = 
+// [
+//   {
+//     "name": "Su",
+//     "favColor": "green",
+//     "buddingWebDev": true,
+//     "hobbies": ["Exercising", "Eating", "Coding"],
+//     "kids": [{
+//       "name": "Sullivan",
+//       "age": 5,
+//       "isBoy": true
+//     },
+//     {
+//       "name": "Spencer",
+//       "age": 3,
+//       "isBoy": true
+//     }]
+//   }
+// ]
+
+// console.log(JSON.parse(family));
+
+// const listKiddos = 
+// JSON.parse('{"olderKid": "Sullivan", "youngerKid": "Spencer"}');
+
+// console.log(listKiddos);
+
+const listKiddos = 
+JSON.stringify('{"olderKid": "Sullivan", "youngerKid": "Spencer"}');
+
+console.log(listKiddos);
