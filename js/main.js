@@ -239,6 +239,8 @@ function poppyBtn() {
 
 button.addEventListener('mouseover', poppyBtn);
 
+button.addEventListener('mouseout', poppyBtn);
+
 // document.getElementById('title').style.textDecoration = "underline";
 
 // let titles = document.querySelector(".title");
